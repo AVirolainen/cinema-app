@@ -23,6 +23,11 @@ const Navbar =()=>{
                         <FaIcons.FaBars onClick={showSidebar}/>
                     </IconContext.Provider>
                 </Link>
+                <div className="headerText">Kinolove</div>
+                <div className="wrapper">
+                    <div className="headerText language">UK</div>
+                    <div className="headerText language">EN</div>
+                </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items" onClick={showSidebar}>

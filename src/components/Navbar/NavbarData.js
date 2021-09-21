@@ -4,26 +4,32 @@ import * as AiIcons from "react-icons/ai"
 import * as IoIcons from "react-icons/io"
 
 export const NavbarData = [{
-    title: "Home", 
+    title: "Зараз в кіно", 
     path: "/",
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
 },
 {
-    title: "Reports", 
-    path: "/reports",
+    title: "Скоро в кіно", 
+    path: "/soon",
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
 },
 {
-    title: "Products", 
+    title: "Акції", 
     path: "/products",
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
 },
 {
-    title: "Team", 
-    path: "/team",
+    title: "Про нас", 
+    path: "/about",
+    icon: <IoIcons.IoMdPeople />,
+    cName: 'nav-text'
+},
+{
+    title: "Зворотній звязок", 
+    path: "/feedback",
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
 },

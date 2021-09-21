@@ -1,0 +1,33 @@
+.homePage{
+    position:relative;
+    background-color: black;
+    height: 89vh;
+}
+
+.carouselBlock{
+    height: 600px;
+    width: 100%;
+    background-color: black;
+    color: white;
+ 
+}
+
+.insideCarousel{
+    display: flex;
+    justify-content: space-around;
+}
+
+.filmposter{
+    width: 300px;
+}
+
+.filmbox{
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.filmname{
+    margin-top: 10px;
+    font-size: 24px
+}
