@@ -25,8 +25,9 @@
 
     ![Сhoose!](./images/choose.png)
 
-    ![Mobile home page](./images/mob-main.png)
+    ![Mobile home page](./images/mob-main.png) ![Mobile choose page](./images/mob-choose.png)
 
-    ![Mobile choose page](./images/mob-choose.png)
+    Більш детально можете оглянути макет десктопної версії [тут](https://www.figma.com/file/0F3IVt3feRI558GjwxpOmZ/1?node-id=0%3A1), і мобільної версії [тут](https://www.figma.com/file/YEUp8y0aHIcC2diDhfGAY7/2?node-id=0%3A1)
 
-
+    - Сценарії взаємодії з користувачем
+    Взаємодія з користувачем відбувається в компоненті сайту, де він хоче забронювати квиток. Користувач відкриває сторінку, і одночасно робиться запит на сервер, який у відповідь надає інформацію про вільні місця/час сеансів. Користувач вибирає місце і бронює квиток, робить запит на сервер, який фіксує, що дані місця вже зайняті
