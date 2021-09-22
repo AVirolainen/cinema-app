@@ -1,0 +1,92 @@
+.filmPage{
+    position:relative;
+    background-color: black;
+    height: 89vh;
+
+    display: flex;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.filmWrapper{
+    position:fixed;
+    max-width: 40%;
+    height: 80%;
+    text-align: center;
+}
+
+.imageBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.filmPoster{
+    width: 65%;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+
+.infoBox{
+    width: 60%;
+    color: white;
+    padding: 30px;
+    font: "Roboto";
+    margin-left: 500px;
+}
+
+.filmName{
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.filmCharacteristic{
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.filmKey{
+    margin-right: 25px;
+    min-width: 150px;
+}
+
+.filmValue{
+    color: #757575
+}
+
+.filmDescription{
+    margin-top: 15px;
+    font-size: 16px;
+}
+.overlay {
+    display:none;
+}
+
+.ticketButton{
+    background: #ED213A;
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
+    background: linear-gradient(to right, #93291E, #ED213A);
+
+    margin-top: 30px;
+
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: 0.5s linear;
+    width: 250px;
+}
+
+.ticketButton:hover{
+    opacity: 0.5;
+}

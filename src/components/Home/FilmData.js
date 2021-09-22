@@ -17,7 +17,7 @@ export const FilmData = [[{
     logo: hulk
 },
 {
-    name: "It. Chapter 2",
+    name: "It",
     logo: it
 }],
 [{

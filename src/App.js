@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar/Navbar"
 import Home from "./components/Home/Home"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import FilmPage from './components/FilmPage/FilmPage';
 
 
 function App() {
@@ -10,9 +11,8 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route path="/" render={()=><Home />} />
+        <Route path="/film" render={()=><FilmPage />} />
       </Switch>
     </Router>
   );

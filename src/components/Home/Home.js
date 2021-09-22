@@ -3,6 +3,7 @@ import "./Home.css"
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
 import {FilmData} from "./FilmData"
+import {Link} from "react-router-dom"
 
 const Home = ()=>{
     console.log(FilmData)
@@ -14,7 +15,9 @@ const Home = ()=>{
                     {FilmData[0].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <img src={item.logo} className="filmposter"/>
+                                <Link to="/film">
+                                    <img src={item.logo} className="filmposter"/>
+                                </Link>
                                 <div className="filmname">{item.name}</div>
                             </div>
                         )
@@ -26,7 +29,9 @@ const Home = ()=>{
                     {FilmData[1].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <img src={item.logo} className="filmposter"/>
+                                <Link to="/film">
+                                    <img src={item.logo} className="filmposter"/>
+                                </Link>
                                 <div className="filmname">{item.name}</div>
                             </div>
                         )
@@ -38,7 +43,9 @@ const Home = ()=>{
                     {FilmData[2].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <img src={item.logo} className="filmposter"/>
+                                <Link to="/film">
+                                    <img src={item.logo} className="filmposter"/>
+                                </Link>
                                 <div className="filmname">{item.name}</div>
                             </div>
                         )
