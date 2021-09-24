@@ -85,6 +85,8 @@
     font-weight: 700;
     transition: 0.5s linear;
     width: 250px;
+
+    cursor: pointer;
 }
 
 .ticketButton:hover{

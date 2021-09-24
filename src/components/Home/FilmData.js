@@ -1,47 +1,56 @@
-import casablanka from "./assets/casablanka.jpg"
-import hulk from "./assets/hulk.jpg"
-import it from "./assets/it.jpg"
-import joker from "./assets/joker.jpg"
-import psycho from "./assets/psycho.jpg"
-import pulp_fiction from "./assets/pulp_fiction.jpg"
-import rent from "./assets/rent.jpg"
-import shining from "./assets/shining.jpg"
-import troy from "./assets/troy.jpg"
+import holywood from "./assets/holywood.jpg"
+import circus from "./assets/circus.jpg"
+import blade_runner from "./assets/blade_runner.jpg"
+import black_panther from "./assets/panther.jpg"
+import city_lights from "./assets/lights.jpg"
+import back_to_the_future from "./assets/back_to_the_future2.jpg"
+import star_trek from "./assets/star_track.jpg"
+import jaws from "./assets/jaws.jpg"
+import ghostbusters from "./assets/ghostbusters.jpg"
 
 export const FilmData = [[{
-    name: "Casablanca",
-    logo: casablanka
+    name: "Once Upon A Time ... In Holywood",
+    logo: holywood,
+    id: "tt7131622"
 },
 {
-    name: "Hulk",
-    logo: hulk
+    name: "The Circus",
+    logo: circus,
+    id: "tt0018773"
 },
 {
-    name: "It",
-    logo: it
+    name: "Blade Runner 2049",
+    logo: blade_runner,
+    id: 'tt1856101'
 }],
 [{
-    name: "Joker",
-    logo: joker
+    name: "Black Panther",
+    logo: black_panther,
+    id: "tt1825683"
 },
 {
-    name: "Psycho",
-    logo: psycho
+    name: "City Lights",
+    logo: city_lights,
+    id: "tt0021749"
 },
 {
-    name: "Pulp Fiction",
-    logo: pulp_fiction
+    name: "Back To The Future. Part 2",
+    logo: back_to_the_future,
+    id: "tt0096874"
 }],
 [{
-    name: "Rent",
-    logo: rent
+    name: "Star Trek",
+    logo: star_trek,
+    id: "tt0092455"
 },
 {
-    name: "Shining",
-    logo: shining
+    name: "Jaws",
+    logo: jaws,
+    id: "tt0073195"
 },
 {
-    name: "Troy",
-    logo: troy
+    name: "Ghostbusters",
+    logo: ghostbusters,
+    id: "tt0087332"
 },]
 ]

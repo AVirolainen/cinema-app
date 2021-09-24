@@ -12,6 +12,7 @@
   width:50px;
   font-size: 2rem;
   background: none;
+  cursor: pointer;
 }
 
 .nav-menu {

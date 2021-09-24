@@ -1,0 +1,11 @@
+.loadingPage{
+    position:relative;
+    background-color: black;
+    height: 89vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: scroll;
+}
+

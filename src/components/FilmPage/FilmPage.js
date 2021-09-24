@@ -1,131 +1,136 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import "./FilmPage.css"
 
-import holywood from "../Home/assets/holywood.jpg"
+import LoadingPage from "../LoadingPage/LoadingPage.js"
+import { useLocation } from "react-router"
+import {Link} from "react-router-dom"
 
 const FilmPage = ()=>{
+    const location = useLocation()
+    const {filmId, poster} = location.state
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [info, setInfo] = useState({})
+
+    useEffect(() => {
+        fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=c38fb01d`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setIsLoaded(true)
+                setInfo(data)
+                console.log(data);
+            });
+    }, [])
+
+    if (!isLoaded){
+        return <LoadingPage />
+    }
+    else{
     return(
     <div className="filmPage">
         <div className="filmWrapper">
             <div className="imageBox">
-                <img src={holywood} className="filmPoster"/>
+                <img src={poster} className="filmPoster"/>
             
             </div>
-            <div className="ticketButton">
-                    Вибрати квиток
-            </div>
+            <Link to="/ticket">
+                <div className="ticketButton">
+                        Вибрати квиток
+                </div>
+            </Link>
         </div>
-        
+
         <div className="infoBox">   
             <div className="filmName">
-                Once Upon a Time in… Hollywood 
+                {info.Title}
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Вік:
+                    Year:
                 </div>
                 <div className="filmValue">
-                    18+
-                </div>
-            </div>
-            <div className="filmCharacteristic">
-                <div className="filmKey">
-                    Рік:
-                </div>
-                <div className="filmValue">
-                    2021
+                    {info.Year}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Режисер: 
+                    Director: 
                 </div>
                 <div className="filmValue">
-                    Квентін Тарантіно
+                    {info.Director}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Дата виходу:
+                    Released:
                 </div>
                 <div className="filmValue">
-                    01.01.2021
+                    {info.Released}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Мова:
+                    Country:
                 </div>
                 <div className="filmValue">
-                    Українська
+                    {info.Country}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Жанр:
+                    Genre:
                 </div>
                 <div className="filmValue">
-                    Бойовик, Триллер
+                    {info.Genre}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Тривалість:
+                    Runtime:
                 </div>
                 <div className="filmValue">
-                    1:49
+                    {info.Runtime}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Виробництво:
+                    Production:
                 </div>
                 <div className="filmValue">
-                    Великобританія
+                    {info.Production}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Студія:
+                    Writer:
                 </div>
                 <div className="filmValue">
-                    Focus Features
+                    {info.Writer}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    Сценарій:
+                    Actors:
                 </div>
                 <div className="filmValue">
-                    Пол Шредер
+                    {info.Actors}
                 </div>
             </div>
             <div className="filmCharacteristic">
                 <div className="filmKey">
-                    В головних ролях:
+                    IMDB Rating:
                 </div>
                 <div className="filmValue">
-                    Оскар Айзек, Уиллем Дефо, Тай Шеридан, Тиффани Хэддиш, Екатерина Бэйкер, Джоэль Майкли, Билли Слотер
-                </div>
-            </div>
-            <div className="filmCharacteristic">
-                <div className="filmKey">
-                    Сценарій:
-                </div>
-                <div className="filmValue">
-                    Пол Шредер
+                    {info.imdbRating}
                 </div>
             </div>
             <div className="filmDescription">
-                Главное в покере — сохранять хладнокровие и считать на несколько ходов вперёд. 
-                Именно этими навыками Уильям овладел в совершенстве, когда решил начать новую жизнь. 
-                Теперь он уверенно идет к участию в Мировой серии и большим деньгам, понимая, 
-                что это его возможность оставить позади тайны своего прошлого. Но когда судьба 
-                подкидывает ему шанс на возмездие, Уильям оказывается втянут в игру, где на кону 
-                стоит нечто большее, чем деньги.
+                {info.Plot}
             </div>
         </div>
     </div>)
+    }
 }
 
 export default FilmPage

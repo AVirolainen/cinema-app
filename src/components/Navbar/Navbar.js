@@ -18,11 +18,11 @@ const Navbar =()=>{
     return(
         <>
             <div className="navbar">
-                <Link to="#" className="menu-bars">
+                <div className="menu-bars" onClick={()=>{}}>
                     <IconContext.Provider value={{ color: "white" }}>
                         <FaIcons.FaBars onClick={showSidebar}/>
                     </IconContext.Provider>
-                </Link>
+                </div>
                 <div className="headerText">Kinolove</div>
                 <div className="wrapper">
                     <div className="headerText language">UK</div>
@@ -32,11 +32,11 @@ const Navbar =()=>{
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items" onClick={showSidebar}>
                     <li className="navbar-toggle">
-                        <Link to="#" className="menu-bars">
+                        <div className="menu-bars">
                             <IconContext.Provider value={{ color: "white" }}>
                                 <AiIcons.AiOutlineClose />
                             </IconContext.Provider>
-                        </Link>
+                        </div>
                     </li>
                     {NavbarData.map((item, index)=>{
                         return (

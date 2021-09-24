@@ -15,7 +15,12 @@ const Home = ()=>{
                     {FilmData[0].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <Link to="/film">
+                                <Link to={{
+                                        pathname: '/film',
+                                        state: {
+                                            filmId: item.id,
+                                            poster: item.logo
+                                        }}}>
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>
@@ -29,7 +34,12 @@ const Home = ()=>{
                     {FilmData[1].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <Link to="/film">
+                                <Link to={{
+                                        pathname: '/film',
+                                        state: {
+                                            filmId: item.id,
+                                            poster: item.logo
+                                        }}}>
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>
@@ -43,7 +53,12 @@ const Home = ()=>{
                     {FilmData[2].map((item)=>{
                         return (
                             <div className="filmbox">
-                                <Link to="/film">
+                                <Link to={{
+                                        pathname: '/film',
+                                        state: {
+                                            filmId: item.id,
+                                            poster: item.logo
+                                        }}}>
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>

@@ -1,0 +1,54 @@
+.ticketPage{
+    position:relative;
+    background-color: black;
+    height: 89vh;
+}
+
+.placesBox{
+    width: 50%;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.chairsWrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.chairImage{
+    height: 35px;
+    width: 35px;
+}
+
+.missedChair{
+    width: 55px;
+}
+
+.chairsSpec{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    justify-content: space-around;
+    width: 500px;
+
+    color: white;
+    font-size: 18px;
+}
+
+.specSimple{
+    width: 170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.specSimple:nth-child(2){
+    width: 120px;
+}
+
+.bannedChair{
+    opacity: 0.5;
+}
