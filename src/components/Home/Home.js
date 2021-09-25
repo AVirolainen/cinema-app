@@ -6,11 +6,10 @@ import {FilmData} from "./FilmData"
 import {Link} from "react-router-dom"
 
 const Home = ()=>{
-    console.log(FilmData)
     return (
         <div className="homePage">
             <Carousel autoplay>
-                <div className="carouselBlock">
+                <div className="carouselBlock carousel">
                     <div className="insideCarousel">
                     {FilmData[0].map((item)=>{
                         return (
