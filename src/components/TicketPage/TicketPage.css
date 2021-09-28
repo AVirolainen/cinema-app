@@ -83,3 +83,55 @@
 .datePicker{
     margin-top: 20px;
 }
+
+.filmName{
+    color: white
+}
+
+
+@media screen and (max-width: 900px){
+    .ticketPage{
+        display: block;
+    }
+    .filmWrapper{
+        width: 50%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+    .filmPoster{
+        margin-top: 15px;
+        margin-bottom: 25px;
+        width: 240px;
+    }
+    .placesBox{
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+        padding-top: 0px;
+        margin-top: -10px;
+    }
+    .chairImage{
+        height: 30px;
+        width: 30px;
+        
+    }
+    .placesWrapper{
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .chairsWrapper{
+        width: 700px;
+
+    }
+    .chairsSpec{
+        display: block;
+        width: 100%;
+    }
+    .specSimple{
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+}
+

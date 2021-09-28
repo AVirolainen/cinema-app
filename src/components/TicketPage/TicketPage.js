@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useRef, useState} from "react"
 import "./TicketPage.css"
 import moment from 'moment';
 import 'antd/dist/antd.css';
@@ -8,6 +8,7 @@ import { useLocation } from "react-router"
 
 import chair from "./assets/chair.svg"
 import chair_picked from "./assets/chair_picked.svg"
+import ChairHandler from "./ChairHandler";
 
 function range(start, end) {
     const result = [];
@@ -18,30 +19,31 @@ function range(start, end) {
 }
 
 function disabledDate(current) {
-// Can not select days before today and today
-return current && current < moment().endOf('day');
+    return current && current < moment().endOf('day');
 }
   
 function disabledDateTime() {
-return {
-    disabledHours: () => range(0, 23).splice(0, 10),
-    disabledMinutes: () => range(1, 60),
-    disabledSeconds: () => range(1, 60),
-};
+    return {
+        disabledHours: () => range(0, 23).splice(0, 10),
+        disabledMinutes: () => range(1, 60),
+        disabledSeconds: () => range(1, 60),
+    };
 }
 
 const TicketPage = ()=>{
     const location = useLocation()
     const {filmName, poster} = location.state
 
-    console.log(filmName)
+    const [chairsList, setChairsList] = useState([])
+
+    console.log(chairsList)
 
     let places = []
 
     for(let i=0; i<9; i++){
         let row = []
         for(let j=0; j<13; j++){
-            row.push([i, j])
+            row.push([i, j, "free"])
         }
         places.push(row)
     }
@@ -53,25 +55,45 @@ const TicketPage = ()=>{
                 <div className="imageBox">
                     <img src={poster} className="filmPoster"/>
                 </div>
+                {/* <div className="filmName">
+                    {filmName}
+                </div> */}
             </div>
 
+            
+
             <div className="placesBox">
+                <div className="placesWrapper">
                 {
                     places.map((row)=>{
                         return(
                             <div className="chairsWrapper">
                                 {
                                     row.map((item)=>{
+            
                                         if(item[1] === 2 || item[1] === 10 ){
                                             return <div className="missedChair"> </div>
                                         }
-                                        return <img src={chair} className="chairImage"/>
+                                        
+                                        for(let k=0; k<chairsList.length; k++){
+                                            if(JSON.stringify([item[1], item[0]]) === JSON.stringify(chairsList[k])){
+                                                item[2]="banned"
+                                            }
+                                        }
+                                        
+                                        return <ChairHandler 
+                                                            row={item[1]} 
+                                                            column={item[0]}
+                                                            chairsList={chairsList}
+                                                            setChairsList={setChairsList}
+                                                            chairValue={item[2]}/>
                                     })
                                 }
                             </div>
                         )
                     })
                 }
+                </div>
                 <div className="chairsSpec">
                     <div className="specSimple">
                         <img src={chair} />

@@ -94,8 +94,18 @@ span {
 }
 .headerText.language{
   font-size: 24px;
-  
 }
+
+@media screen and (max-width: 900px) {
+  .headerText.language{
+    display: none
+  }
+  .headerText{
+    margin-left: 20px
+  }
+
+}
+
 
 .headerText.language:hover{
   opacity: 0.5

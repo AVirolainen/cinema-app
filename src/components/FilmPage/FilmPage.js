@@ -29,21 +29,22 @@ const FilmPage = ()=>{
     else{
     return(
     <div className="filmPage">
+
         <div className="filmWrapper">
             <div className="imageBox">
                 <img src={poster} className="filmPoster"/>
-            
             </div>
+            <div className="ticketButton">
             <Link to={{
                     pathname: '/ticket',
                     state: {
                         filmName: info.Title,
                         poster: poster
                     }}}>
-                <div className="ticketButton">
                         Вибрати квиток
-                </div>
+        
             </Link>
+            </div>
         </div>
 
         <div className="infoBox">   

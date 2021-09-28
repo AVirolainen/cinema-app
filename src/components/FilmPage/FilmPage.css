@@ -8,6 +8,7 @@
     overflow-y: scroll;
 }
 
+
 .filmWrapper{
     position:fixed;
     max-width: 40%;
@@ -19,7 +20,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .filmPoster{
@@ -72,11 +72,11 @@
     background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
     background: linear-gradient(to right, #93291E, #ED213A);
 
-    margin-top: 30px;
+    margin-top: 15px;
 
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -91,4 +91,35 @@
 
 .ticketButton:hover{
     opacity: 0.5;
+}
+
+
+@media screen and (max-width: 900px){
+    .filmPage{
+        display: block;
+    }
+    .filmWrapper{
+        width: 50%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+    .filmPoster{
+        margin-top: 15px;
+        margin-bottom: 25px;
+        width: 240px;
+    }
+    .infoBox{
+        margin-top: -60px;
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+    }
+    .filmName{
+        text-align: center;
+    }
+    .ticketButton{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
