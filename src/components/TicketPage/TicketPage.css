@@ -73,7 +73,7 @@
     width: 50%;
 }
 
-.ticketText{
+.ticketText, .placesText{
     font-size: 24px;
     color: white;
     text-align: center;
@@ -88,6 +88,58 @@
     color: white
 }
 
+.placeItem{
+    color: white;
+    font-size: 18px;
+    display: flex;
+}
+
+.placesList{
+   
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.placesHeader{
+    display: flex;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    border-bottom: 1px solid white;
+}
+
+.placeText{
+    margin-left: 40px;
+}
+
+.priceText{
+    margin-left: 115px;
+}
+
+.rowValue{
+    margin-left: 15px;
+}
+
+.placeValue{
+    margin-left: 80px;
+}
+
+.priceValue{
+    margin-left: 150px;
+}
+
+.fullPrice{
+    color: white;
+    font-size: 18px;
+    margin-left: 260px;
+}
+
+.bottomWrapper{
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start
+}
 
 @media screen and (max-width: 900px){
     .ticketPage{

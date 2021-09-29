@@ -35,8 +35,14 @@ const TicketPage = ()=>{
     const {filmName, poster} = location.state
 
     const [chairsList, setChairsList] = useState([])
+    const [update, setUpdate] = useState(false)
 
     console.log(chairsList)
+
+    const changeList =(list)=>{
+        setChairsList(list)
+        setUpdate(!update)
+    }
 
     let places = []
 
@@ -85,7 +91,7 @@ const TicketPage = ()=>{
                                                             row={item[1]} 
                                                             column={item[0]}
                                                             chairsList={chairsList}
-                                                            setChairsList={setChairsList}
+                                                            setChairsList={changeList}
                                                             chairValue={item[2]}/>
                                     })
                                 }
@@ -109,6 +115,10 @@ const TicketPage = ()=>{
                     </div>
                 </div>
 
+                <div className="bottomWrapper">
+
+
+                <div>
                 <div className="ticketText">Виберіть дату та час сеансу</div>
                 <div className="datePicker">
                     <DatePicker
@@ -118,6 +128,48 @@ const TicketPage = ()=>{
                         showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
                         onChange={(date, dateString) => console.log(dateString)}
                         />
+                </div>
+                </div>
+
+                <div className="placesList">
+                    <div className="placesHeader">
+                        <div className="rowText">
+                            Ряд
+                        </div>
+                        <div className="placeText">
+                            Місце
+                        </div>
+                        <div className="priceText">
+                            Ціна
+                        </div>
+                    </div>
+                    {
+                        chairsList.map((item, index)=>{
+                            return (<div className="placeItem" key={index}>
+                                        <div className="rowValue">
+                                        {item[1]+1}
+                                        </div>
+                                        <div className="placeValue">
+                                        {item[0]+1}
+                                        </div>
+                                        <div className="priceValue">
+                                            150
+                                        </div>
+                                    </div>
+                                )
+                        })
+                    }
+                    <div className="placesHeader">
+                        <div className="rowText">
+                            Всього:
+                        </div>
+                        
+                       
+                        
+                    </div>
+                    <div className="fullPrice">{chairsList.length*150}</div>
+                </div>
+
                 </div>
                     
             </div>
