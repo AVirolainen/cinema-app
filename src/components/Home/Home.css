@@ -1,15 +1,15 @@
 .homePage{
     position:relative;
     background-color: black;
-    height: 89vh;
+    height: 100%;
+    padding-bottom: 44%;
 }
 
 .carouselBlock{
-    height: 550px;
     width: 100%;
     background-color: black;
     color: white;
- 
+    padding-bottom: 3%; 
 }
 
 .insideCarousel{
@@ -17,22 +17,26 @@
     justify-content: space-around;
 }
 
-@media screen and (max-width: 900px) {
-    .insideCarousel{
-        display: block;        
-    }
+@media (max-width: 992px) {
     .filmposter{
-        margin: 0 auto
-    }
-
-    .carouselBlock{
-        height: 600px;     
+        height: 700px;
+        width: 500px;
     }
 }
 
+@media (max-width: 767px){
+    .carouselBlock{
+        padding-bottom: 7%;
+       
+     }
+}
+
+
+
 .filmposter{
-    width: 280px;
+    margin: 0 auto;
     height: 400px;
+    width: 300px;
     transition: 0.6s linear
 }
 
@@ -41,6 +45,7 @@
 }
 
 .filmbox{
+    min-height: 100%;
     margin-top: 20px;
     text-align: center;
 }
@@ -50,8 +55,4 @@
     margin-top: 30px;
     font-size: 24px;
     width: 300px;
-}
-
-.carousel{
-    display: none;
 }

@@ -35,15 +35,15 @@ const FilmPage = ()=>{
                 <img src={poster} className="filmPoster"/>
             </div>
             <div className="ticketButton">
-            <Link to={{
-                    pathname: '/ticket',
-                    state: {
-                        filmName: info.Title,
-                        poster: poster
-                    }}}>
-                        Вибрати квиток
-        
-            </Link>
+                <Link to={{
+                        pathname: '/ticket',
+                        state: {
+                            filmName: info.Title,
+                            poster: poster
+                        }}}>
+                            Вибрати квиток
+            
+                </Link>
             </div>
         </div>
 

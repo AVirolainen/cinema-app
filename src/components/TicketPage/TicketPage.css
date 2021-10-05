@@ -185,5 +185,9 @@
         margin-bottom: 15px;
     }
 
+    .bottomWrapper{
+        display: block
+    }
+
 }
 

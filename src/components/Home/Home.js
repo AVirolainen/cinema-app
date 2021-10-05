@@ -16,7 +16,7 @@ function getWindowDimensions() {
 const Home = ()=>{
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     console.log(windowDimensions)
-    if(windowDimensions.width < 900){
+    if(windowDimensions.width < 1000){
         const temp = []
         FilmData.map((item)=>{
             item.map((innerItem)=>{
@@ -28,7 +28,7 @@ const Home = ()=>{
                 <Carousel autoplay>
                     {temp.map((item)=>{
                         return (
-                            <div className="carouselBlock carousel">
+                            <div className="carouselBlock">
                                 <div className="insideCarousel">
                                     <div className="filmbox">
                                         <Link to={{
