@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb131724-ff33-4fee-91ea-e9440c066346" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/TicketPage/TicketPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketPage/TicketPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketPage/TicketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketPage/TicketPage.js" afterDir="false" />
-    </list>
+    <list default="true" id="bb131724-ff33-4fee-91ea-e9440c066346" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

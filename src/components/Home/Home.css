@@ -1,58 +1,55 @@
-.homePage{
-    position:relative;
-    background-color: black;
-    height: 100%;
-    padding-bottom: 44%;
+.homePage {
+  position: relative;
+  background-color: black;
+  height: 100%;
+  padding-bottom: 44%;
 }
 
-.carouselBlock{
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding-bottom: 3%; 
+.carouselBlock {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding-bottom: 3%;
 }
 
-.insideCarousel{
-    display: flex;
-    justify-content: space-around;
+.insideCarousel {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (max-width: 992px) {
-    .filmposter{
-        height: 700px;
-        width: 500px;
-    }
+  .filmposter {
+    height: 700px;
+    width: 500px;
+  }
 }
 
-@media (max-width: 767px){
-    .carouselBlock{
-        padding-bottom: 7%;
-       
-     }
+@media (max-width: 767px) {
+  .carouselBlock {
+    padding-bottom: 7%;
+  }
 }
 
-
-
-.filmposter{
-    margin: 0 auto;
-    height: 400px;
-    width: 300px;
-    transition: 0.6s linear
+.filmposter {
+  margin: 0 auto;
+  height: 430px;
+  width: 300px;
+  transition: 0.6s linear;
 }
 
-.filmposter:hover{
-    opacity: 0.5
+.filmposter:hover {
+  opacity: 0.5;
 }
 
-.filmbox{
-    min-height: 100%;
-    margin-top: 20px;
-    text-align: center;
+.filmbox {
+  min-height: 100%;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.filmname{
-    margin: 0 auto;
-    margin-top: 30px;
-    font-size: 24px;
-    width: 300px;
+.filmname {
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 24px;
+  width: 300px;
 }
