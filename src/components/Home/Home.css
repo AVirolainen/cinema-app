@@ -2,10 +2,11 @@
   position: relative;
   background-color: black;
   height: 100%;
-  padding-bottom: 44%;
+  padding-bottom: 80%;
 }
 
 .carouselBlock {
+  margin-top: 5%;
   width: 100%;
   background-color: black;
   color: white;

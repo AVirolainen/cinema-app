@@ -1,0 +1,38 @@
+.discountsPage{
+    position:relative;
+    background-color: black;
+    height: 95vh;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: white;
+
+
+}
+
+.imageDiv{
+    width: 50%;
+}
+
+.cinemaImage{
+    height: 100%
+}
+
+
+.textDiv{
+    width: 50%;
+    padding-left: 20px;
+}
+
+.textHeader{
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+}
+
+.textInfo{
+    margin-top: 30px;
+    color: #ababab;
+    font-size: 18px;
+}
