@@ -17,7 +17,7 @@ export const NavbarData = [{
 },
 {
     title: "Акції", 
-    path: "/products",
+    path: "/discount",
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
 },
