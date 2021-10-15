@@ -27,10 +27,5 @@ export const NavbarData = [{
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
 },
-{
-    title: "Зворотній звязок", 
-    path: "/feedback",
-    icon: <IoIcons.IoMdPeople />,
-    cName: 'nav-text'
-},
+
 ]
