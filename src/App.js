@@ -7,6 +7,7 @@ import FilmPage from './components/FilmPage/FilmPage';
 import TicketPage from "./components/TicketPage/TicketPage.js"
 import DiscountPage from './components/DiscountsPage/DiscountsPage';
 import Soon from "./components/Soon/Soon"
+import AboutPage from "./components/AboutPage/AboutPage"
 import { AnimatedSwitch } from 'react-router-transition';
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/ticket" render={()=><TicketPage />} />
         <Route path="/soon" render={()=><Soon />} />
         <Route path="/discount" render={()=><DiscountPage />} />
+        <Route path="/about" render={()=><AboutPage />} />
         <Route path="/" component={Home} />
       </AnimatedSwitch>
     </Router>

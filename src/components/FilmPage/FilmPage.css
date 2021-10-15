@@ -1,130 +1,125 @@
-.filmPage{
-    position:relative;
-    background-color: black;
-    height: 89vh;
+.filmPage {
+  position: relative;
+  background-color: black;
+  height: 89vh;
 
-    display: flex;
-    justify-content: space-between;
-    overflow-y: scroll;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: scroll;
 
-    padding-bottom: 80%;
+  padding-bottom: 80%;
 }
 
-
-.filmWrapper{
-    position:fixed;
-    max-width: 40%;
-    height: 80%;
-    text-align: center;
+.filmWrapper {
+  position: fixed;
+  max-width: 40%;
+  height: 80%;
+  text-align: center;
 }
 
-.imageBox{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.imageBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.filmPoster{
-    width: 85%;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 20%;
-    
+.filmPoster {
+  width: 65%;
+  border-radius: 10px;
+  margin-top: 30px;
 }
 
-
-.infoBox{
-    width: 60%;
-    color: white;
-    padding: 30px;
-    font: "Roboto";
-    margin-left: 40%;
+.infoBox {
+  width: 60%;
+  color: white;
+  padding: 30px;
+  font: "Roboto";
+  margin-left: 40%;
 }
 
-.filmName{
-    font-size: 34px;
-    font-weight: 700;
-    margin-bottom: 30px;
+.filmName {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-.filmCharacteristic{
-    display: flex;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+.filmCharacteristic {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.filmKey{
-    margin-right: 25px;
-    min-width: 150px;
+.filmKey {
+  margin-right: 25px;
+  min-width: 150px;
 }
 
-.filmValue{
-    color: #757575
+.filmValue {
+  color: #757575;
 }
 
-.filmDescription{
-    margin-top: 15px;
-    font-size: 16px;
+.filmDescription {
+  margin-top: 15px;
+  font-size: 16px;
 }
 .overlay {
-    display:none;
+  display: none;
 }
 
-.ticketButton{
-    background: #ED213A;
-    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
-    background: linear-gradient(to right, #93291E, #ED213A);
+.ticketButton {
+  background: #ed213a;
+  background: -webkit-linear-gradient(to right, #93291e, #ed213a);
+  background: linear-gradient(to right, #93291e, #ed213a);
 
-    margin-top: 15px;
+  margin-top: 15px;
 
-    border: none;
-    color: white;
-    padding: 10px 32px;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: 0.5s linear;
+  width: 250px;
+
+  cursor: pointer;
+}
+
+.ticketButton:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 900px) {
+  .filmPage {
+    display: block;
+  }
+  .filmWrapper {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 20px;
-    font-weight: 700;
-    transition: 0.5s linear;
-    width: 250px;
-
-    cursor: pointer;
-}
-
-.ticketButton:hover{
-    opacity: 0.5;
-}
-
-
-@media screen and (max-width: 900px){
-    .filmPage{
-        display: block;
-    }
-    .filmWrapper{
-        width: 70%;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-    }
-    .filmPoster{
-        margin-top: 15px;
-        margin-bottom: 25px;
-        width: 240px;
-    }
-    .infoBox{
-        margin-top: -60px;
-        width: 100%;
-        position: relative;
-        margin-left: 0;
-    }
-    .filmName{
-        margin-top: 30px;
-        text-align: center;
-    }
-    .ticketButton{
-        width: 100%;
-        margin: 0 auto;
-    }   
+  }
+  .filmPoster {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 240px;
+  }
+  .infoBox {
+    margin-top: -60px;
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+  }
+  .filmName {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .ticketButton {
+    width: 100%;
+    margin: 0 auto;
+  }
 }

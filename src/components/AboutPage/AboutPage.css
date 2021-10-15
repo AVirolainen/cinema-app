@@ -1,0 +1,68 @@
+.aboutPage {
+  position: relative;
+  background-color: black;
+  height: 100%;
+  padding-bottom: 80%;
+  display: flex;
+  color: white;
+}
+
+.moviesImage {
+  min-width: 170%;
+  overflow: visible;
+  margin-left: -77%;
+}
+
+.aboutImage {
+  width: 50%;
+}
+
+.aboutText {
+  text-align: center;
+  width: 50%;
+}
+.aboutHeader {
+  margin: 0 auto;
+  text-transform: uppercase;
+  border: 1px solid white;
+  width: 170px;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.aboutInfo {
+  font-size: 18px;
+  width: 90%;
+  text-align: start;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.aboutBox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.boxItem {
+  border: 1px solid white;
+  width: 120px;
+}
+
+.boxImage {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 0.5s linear;
+}
+
+.boxText {
+  font-weight: 700;
+  max-width: 100px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.boxItem:hover {
+  border: 1px solid #737373;
+  cursor: pointer;
+}
