@@ -19,8 +19,12 @@
 
 .aboutText {
   text-align: center;
+  background-color: black;
+  max-height: 560px;
+  overflow-y: scroll;
   width: 50%;
 }
+
 .aboutHeader {
   margin: 0 auto;
   text-transform: uppercase;
@@ -39,14 +43,17 @@
 }
 
 .aboutBox {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .boxItem {
+  margin-top: 10px;
   border: 1px solid white;
-  width: 120px;
+  min-width: 120px;
+  min-height: 150px;
 }
 
 .boxImage {
@@ -65,4 +72,37 @@
 .boxItem:hover {
   border: 1px solid #737373;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .aboutPage {
+    display: block;
+    height: 89vh;
+    overflow-y: scroll;
+  }
+
+  .aboutText {
+    margin-top: -180px;
+    width: 100%;
+    text-align: center;
+    overflow-y: none;
+    min-height: 1000px;
+    overflow-y: hidden;
+  }
+
+  .aboutImage {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .moviesImage {
+    max-width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+  }
+
+  .aboutBox {
+    display: flex-wrap;
+  }
 }

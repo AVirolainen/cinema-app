@@ -5,6 +5,7 @@
 
   display: flex;
   justify-content: space-between;
+  overflow-y: scroll;
 
   color: white;
 
@@ -37,13 +38,18 @@
 }
 
 @media (max-width: 600px) {
+  .discountsPage {
+    display: block;
+    overflow-y: scroll;
+  }
   .textDiv {
     min-width: 100%;
     text-align: center;
-    overflow-y: scroll;
   }
   .imageDiv {
     width: 100%;
-    overflow-y: scroll;
+  }
+  .textDiv {
+    padding-left: 0;
   }
 }
