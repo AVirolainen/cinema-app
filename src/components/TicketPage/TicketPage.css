@@ -1,193 +1,188 @@
-.ticketPage{
-    position:relative;
-    background-color: black;
-    height: 89vh;
+.ticketPage {
+  position: relative;
+  background-color: black;
+  height: 89vh;
 
-    display: flex;
-    overflow-y: scroll;
+  display: flex;
+  overflow-y: scroll;
 }
 
-.placesBox{
+.placesBox {
+  width: 50%;
+  height: 100%;
+  padding-top: 30px;
+  margin-left: 600px;
+
+  text-align: center;
+}
+
+.chairsWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.chairImage {
+  height: 35px;
+  width: 35px;
+  transition: 0.6s linear;
+}
+
+.chairImage:hover {
+  opacity: 0.5;
+}
+
+.missedChair {
+  width: 55px;
+}
+
+.chairsSpec {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+  justify-content: space-around;
+  width: 500px;
+
+  color: white;
+  font-size: 18px;
+}
+
+.specSimple {
+  width: 170px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.specSimple:nth-child(2) {
+  width: 120px;
+}
+
+.bannedChair {
+  opacity: 0.5;
+}
+
+.posterBox {
+  max-width: 50%;
+  background-color: blanchedalmond;
+}
+
+.placesInfo {
+  width: 50%;
+}
+
+.ticketText,
+.placesText {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.datePicker {
+  margin-top: 20px;
+}
+
+.filmName {
+  color: white;
+}
+
+.placeItem {
+  color: white;
+  font-size: 18px;
+  display: flex;
+}
+
+.placesList {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.placesHeader {
+  display: flex;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  border-bottom: 1px solid white;
+}
+
+.placeText {
+  margin-left: 40px;
+}
+
+.priceText {
+  margin-left: 115px;
+}
+
+.rowValue {
+  margin-left: 15px;
+}
+
+.placeValue {
+  margin-left: 80px;
+}
+
+.priceValue {
+  margin-left: 150px;
+}
+
+.fullPrice {
+  color: white;
+  font-size: 18px;
+  margin-left: 260px;
+}
+
+.bottomWrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+  .ticketPage {
+    display: block;
+  }
+  .filmWrapper {
     width: 50%;
-    height: 100%;
-    padding-top: 30px;
-    margin-left: 600px;
-
+    margin: 0 auto;
+    position: relative;
     text-align: center;
-}
-
-.chairsWrapper{
-    display: flex;
-    justify-content: space-around;
-    width: 600px;
+  }
+  .filmPoster {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 240px;
+  }
+  .placesBox {
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .chairImage {
+    height: 30px;
+    width: 30px;
+  }
+  .placesWrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .chairsWrapper {
+    width: 700px;
+  }
+  .chairsSpec {
+    display: block;
+    width: 100%;
+  }
+  .specSimple {
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .bottomWrapper {
+    display: block;
+  }
 }
-
-.chairImage{
-    height: 35px;
-    width: 35px;
-    transition: 0.6s linear;
-}
-
-.chairImage:hover{
-    opacity: 0.5
-}
-
-.missedChair{
-    width: 55px;
-}
-
-.chairsSpec{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 40px;
-    justify-content: space-around;
-    width: 500px;
-
-    color: white;
-    font-size: 18px;
-}
-
-.specSimple{
-    width: 170px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.specSimple:nth-child(2){
-    width: 120px;
-}
-
-.bannedChair{
-    opacity: 0.5;
-}
-
-.posterBox{
-    max-width: 50%;
-    background-color: blanchedalmond;
-}
-
-.placesInfo{
-    width: 50%;
-}
-
-.ticketText, .placesText{
-    font-size: 24px;
-    color: white;
-    text-align: center;
-    margin-top: 25px;
-}
-
-.datePicker{
-    margin-top: 20px;
-}
-
-.filmName{
-    color: white
-}
-
-.placeItem{
-    color: white;
-    font-size: 18px;
-    display: flex;
-}
-
-.placesList{
-   
-    max-width: 300px;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-
-.placesHeader{
-    display: flex;
-    color: white;
-    font-size: 24px;
-    font-weight: 300;
-    border-bottom: 1px solid white;
-}
-
-.placeText{
-    margin-left: 40px;
-}
-
-.priceText{
-    margin-left: 115px;
-}
-
-.rowValue{
-    margin-left: 15px;
-}
-
-.placeValue{
-    margin-left: 80px;
-}
-
-.priceValue{
-    margin-left: 150px;
-}
-
-.fullPrice{
-    color: white;
-    font-size: 18px;
-    margin-left: 260px;
-}
-
-.bottomWrapper{
-    margin-top: 20px;
-    display: flex;
-    align-items: flex-start
-}
-
-@media screen and (max-width: 900px){
-    .ticketPage{
-        display: block;
-    }
-    .filmWrapper{
-        width: 50%;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-    }
-    .filmPoster{
-        margin-top: 15px;
-        margin-bottom: 25px;
-        width: 240px;
-    }
-    .placesBox{
-        width: 100%;
-        position: relative;
-        margin-left: 0;
-        padding-top: 0px;
-        margin-top: -10px;
-    }
-    .chairImage{
-        height: 30px;
-        width: 30px;
-        
-    }
-    .placesWrapper{
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-    .chairsWrapper{
-        width: 700px;
-
-    }
-    .chairsSpec{
-        display: block;
-        width: 100%;
-    }
-    .specSimple{
-        margin: 0 auto;
-        margin-bottom: 15px;
-    }
-
-    .bottomWrapper{
-        display: block
-    }
-
-}
-
