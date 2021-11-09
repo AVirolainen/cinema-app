@@ -118,19 +118,6 @@ const TicketPage = ()=>{
                 <div className="bottomWrapper">
 
 
-                <div>
-                <div className="ticketText">Виберіть дату та час сеансу</div>
-                <div className="datePicker">
-                    <DatePicker
-                        format="YYYY-MM-DD HH:mm:ss"
-                        disabledDate={disabledDate}
-                        disabledTime={disabledDateTime}
-                        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
-                        onChange={(date, dateString) => console.log(dateString)}
-                        />
-                </div>
-                </div>
-
                 <div className="placesList">
                     <div className="placesHeader">
                         <div className="rowText">
