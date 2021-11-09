@@ -23,6 +23,11 @@ class TicketOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     tickets = models.ManyToManyField(Ticket)
     total_price = models.DecimalField(max_digits=7, decimal_places=2)
+    order_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.user.username} {self.tickets.all().count()} tickets'
+
+    def display_screening(self):
+        return f'{self.tickets.all()[0].screening}'
+    display_screening.short_description = 'screening'
