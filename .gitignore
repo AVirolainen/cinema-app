@@ -115,3 +115,7 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# migrations of db
+cinema_back/*/migrations/*
+!cinema_back/*/migrations/__init__.py
