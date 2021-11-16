@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tickets.models import Ticket, TicketOrder, Screening, Movie
+from tickets.models import Ticket, Order, Screening, Movie
 
 
 @admin.register(Movie)
@@ -18,14 +18,14 @@ class ScreeningAdmin(admin.ModelAdmin):
 	search_fields = ('movie',)
 
 
-@admin.register(TicketOrder)
-class TicketOrderAdmin(admin.ModelAdmin):
-	list_display = ('id', 'screening', 'customer_mail', 'price', 'order_time')
-	list_filter = ('order_time', 'screening')
-	search_fields = ('customer_mail', 'screening')
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+	list_display = ('id', 'customer_mail', 'price', 'order_time')
+	list_filter = ('order_time',)
+	search_fields = ('customer_mail',)
 
 
 @admin.register(Ticket)
 class TicketAdmin(admin.ModelAdmin):
-	list_display = ('id', 'order', 'seat_row', 'seat_column')
+	list_display = ('id', 'screening', 'order', 'seat_row', 'seat_column')
 	search_fields = ('order',)
