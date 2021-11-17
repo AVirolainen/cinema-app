@@ -33,9 +33,16 @@ python manage.py migrate
 `
 
 `
+python manage.py createsuperuser
+`
+
+`
 python manage.py runserver
 `
 
-### Check http://localhost:8000
+### Create some data on http://localhost:8000/admin
 
-![peace](https://cdn1.savepice.ru/uploads/2021/11/15/7321d6c13deb9a84e2a3213672259da2-full.png)
+### Movies: http://localhost:8000/api/movies/
+### Movies screenings: http://localhost:8000/api/screenings/
+
+![](https://camo.githubusercontent.com/ac13209e52632d84e059057f2a8110195656ec2be028b7b7d86b187466b35808/68747470733a2f2f63646e312e73617665706963652e72752f75706c6f6164732f323032312f31312f31352f37333231643663313364656239613834653261333231333637323235396461322d66756c6c2e706e67)
