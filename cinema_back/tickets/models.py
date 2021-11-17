@@ -35,7 +35,7 @@ class Ticket(models.Model):
     seat_column = models.PositiveIntegerField()
 
     class Meta:
-        unique_together = ('order', 'seat_row', 'seat_column')
+        unique_together = ('screening', 'seat_row', 'seat_column')
 
     def __str__(self):
         return f'"order":{self.order}, "row":{self.seat_row}, "column":{self.seat_column},'
