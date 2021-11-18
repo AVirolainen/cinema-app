@@ -82,6 +82,7 @@
 
 .datePicker {
   margin-top: 20px;
+  z-index:10000
 }
 
 .filmName {

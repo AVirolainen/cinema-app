@@ -49,7 +49,7 @@ const Home = ()=>{
         })
         return(
             <div className="homePage">
-                <Carousel autoplay>
+                <Carousel>
                     {temp.map((item)=>{
                         return (
                             <div className="carouselBlock">
@@ -88,7 +88,7 @@ const Home = ()=>{
     }
     return (
         <div className="homePage">
-            <Carousel autoplay>
+            <Carousel>
                 <div className="carouselBlock carousel">
                     <div className="insideCarousel">
                     {FilmData[0].map((item)=>{
@@ -103,20 +103,13 @@ const Home = ()=>{
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>
-                                <div className="filmSchedule">
-                                <div>
-                                    <div className="ticketText">Виберіть дату та час сеансу</div>
-                                    <div className="datePicker">
-                                        <DatePicker
-                                            format="YYYY-MM-DD HH:mm:ss"
-                                            disabledDate={disabledDate}
-                                            disabledTime={disabledDateTime}
-                                            showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
-                                            onChange={(date, dateString) => console.log(dateString)}
-                                            />
+                                <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
+                                    <div className="filmWrapperSchedule">
+                                        <div>
+                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                        </div>
+                                        <div className="price">Ціна: 150грн</div>
                                     </div>
-                                    </div>
-                                    <div className="price">Ціна: 150грн</div>
                                 </div>
                             </div>
                         )
@@ -137,20 +130,13 @@ const Home = ()=>{
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>
-                                    <div className="filmSchedule">
-                                    <div>
-                                    <div className="ticketText">Виберіть дату та час сеансу</div>
-                                    <div className="datePicker">
-                                        <DatePicker
-                                            format="YYYY-MM-DD HH:mm:ss"
-                                            disabledDate={disabledDate}
-                                            disabledTime={disabledDateTime}
-                                            showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
-                                            onChange={(date, dateString) => console.log(dateString)}
-                                            />
+                                    <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
+                                    <div className="filmWrapperSchedule">
+                                        <div>
+                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                        </div>
+                                        <div className="price">Ціна: 150грн</div>
                                     </div>
-                                    </div>
-                                    <div className="price">Ціна: 150грн</div>
                                 </div>
 
                                 
@@ -173,20 +159,13 @@ const Home = ()=>{
                                     <img src={item.logo} className="filmposter"/>
                                 </Link>
                                 <div className="filmname">{item.name}</div>
-                                <div className="filmSchedule">
-                                    <div>
-                                    <div className="ticketText">Виберіть дату та час сеансу</div>
-                                    <div className="datePicker">
-                                        <DatePicker
-                                            format="YYYY-MM-DD HH:mm:ss"
-                                            disabledDate={disabledDate}
-                                            disabledTime={disabledDateTime}
-                                            showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
-                                            onChange={(date, dateString) => console.log(dateString)}
-                                            />
+                                <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
+                                    <div className="filmWrapperSchedule">
+                                        <div>
+                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                        </div>
+                                        <div className="price">Ціна: 150грн</div>
                                     </div>
-                                    </div>
-                                    <div className="price">Ціна: 150грн</div>
                                 </div>
                             </div>
                         )
