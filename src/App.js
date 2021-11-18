@@ -8,6 +8,7 @@ import TicketPage from "./components/TicketPage/TicketPage.js"
 import DiscountPage from './components/DiscountsPage/DiscountsPage';
 import Soon from "./components/Soon/Soon"
 import AboutPage from "./components/AboutPage/AboutPage"
+import BuyTicket from "./components/BuyTicket/BuyTicket"
 import { AnimatedSwitch } from 'react-router-transition';
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/soon" render={()=><Soon />} />
         <Route path="/discount" render={()=><DiscountPage />} />
         <Route path="/about" render={()=><AboutPage />} />
+        <Route path="/buy" render={()=><BuyTicket />} />
         <Route path="/" component={Home} />
       </AnimatedSwitch>
     </Router>

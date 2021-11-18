@@ -1,33 +1,11 @@
-import React, {useState} from "react"
+import React, {useCallback, useContext, useEffect, useState} from "react"
 import "./Home.css"
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
 import {FilmData} from "./FilmData"
 import {Link} from "react-router-dom"
 import { DatePicker, Space } from 'antd';
-
-import moment from 'moment';
-
-function range(start, end) {
-    const result = [];
-    for (let i = start; i < end; i++) {
-        result.push(i);
-    }
-    return result;
-}
-
-function disabledDate(current) {
-    return current && current < moment().endOf('day');
-}
-  
-function disabledDateTime() {
-    return {
-        disabledHours: () => range(0, 23).splice(0, 10),
-        disabledMinutes: () => range(1, 60),
-        disabledSeconds: () => range(1, 60),
-    };
-}
-
+import {useHttp} from "../../hooks/http.hook"
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -39,7 +17,20 @@ function getWindowDimensions() {
 
 const Home = ()=>{
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    console.log(windowDimensions)
+    const {request} = useHttp()
+
+    const getPlaces = useCallback(async () => {
+        try {
+          const fetched = await request('http://localhost:8000/api/screenings/', 'GET')
+          console.log(fetched);
+        } catch (e) {}
+      }, [request])
+
+      useEffect(() => {
+        getPlaces()
+      }, [getPlaces])
+
+
     if(windowDimensions.width < 1000){
         const temp = []
         FilmData.map((item)=>{
@@ -64,16 +55,12 @@ const Home = ()=>{
                                             <img src={item.logo} className="filmposter"/>
                                         </Link>
                                         <div className="filmname">{item.name}</div>
-                                        <div>
-                                            <div className="ticketText">Виберіть дату та час сеансу</div>
-                                            <div className="datePicker">
-                                                <DatePicker
-                                                    format="YYYY-MM-DD HH:mm:ss"
-                                                    disabledDate={disabledDate}
-                                                    disabledTime={disabledDateTime}
-                                                    showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
-                                                    onChange={(date, dateString) => console.log(dateString)}
-                                                    />
+                                        <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
+                                            <div className="filmWrapperSchedule">
+                                                <div>
+                                                    <div className="ticketText">Виберіть дату та час сеансу</div>
+                                                </div>
+                                                <div className="price">Ціна: 150грн</div>
                                             </div>
                                         </div>
                                     </div>

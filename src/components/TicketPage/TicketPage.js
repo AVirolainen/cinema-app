@@ -2,10 +2,10 @@ import React, {useRef, useState} from "react"
 import "./TicketPage.css"
 import moment from 'moment';
 import 'antd/dist/antd.css';
-import { DatePicker, Space } from 'antd';
+import { DatePicker, Space } from 'antd'
+import {Link} from "react-router-dom";
 import { useLocation } from "react-router"
-
-
+import { Button } from 'antd';
 import chair from "./assets/chair.svg"
 import chair_picked from "./assets/chair_picked.svg"
 import ChairHandler from "./ChairHandler";
@@ -61,9 +61,6 @@ const TicketPage = ()=>{
                 <div className="imageBox">
                     <img src={poster} className="filmPoster"/>
                 </div>
-                {/* <div className="filmName">
-                    {filmName}
-                </div> */}
             </div>
 
             
@@ -150,11 +147,18 @@ const TicketPage = ()=>{
                         <div className="rowText">
                             Всього:
                         </div>
-                        
-                       
-                        
                     </div>
                     <div className="fullPrice">{chairsList.length*150}</div>
+                        <div className="ticketButton">
+                            <Link style={{color: 'white'}} to={{
+                                    pathname: '/buy',
+                                    state: {
+                                        filmName: filmName,
+                                        poster: poster
+                                    }}}>
+                                        Купити квиток
+                            </Link>
+                        </div>
                 </div>
 
                 </div>

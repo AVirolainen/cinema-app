@@ -1,0 +1,19 @@
+.buyTicket {
+  position: relative;
+  background-color: black;
+  height: 89vh;
+
+  display: flex;
+  justify-content: space-between;
+  overflow-y: scroll;
+
+  padding-bottom: 80%;
+}
+
+.buyTicketBox{
+  width: 60%;
+  color: white;
+  padding: 30px;
+  font: "Roboto";
+  margin-left: 40%;
+}

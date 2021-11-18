@@ -35,7 +35,7 @@ const FilmPage = ()=>{
                 <img src={poster} className="filmPoster"/>
             </div>
             <div className="ticketButton">
-                <Link to={{
+                <Link style={{color: 'white'}} to={{
                         pathname: '/ticket',
                         state: {
                             filmName: info.Title,

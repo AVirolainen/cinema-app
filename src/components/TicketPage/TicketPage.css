@@ -1,32 +1,33 @@
 .ticketPage {
   position: relative;
   background-color: black;
-  height: 89vh;
+  height: 150vh;
+  padding-bottom: 80%;
 
   display: flex;
-  overflow-y: scroll;
 }
 
 .placesBox {
-  width: 50%;
-  height: 100%;
+  width: 60%;
+  height: 100vh;
   padding-top: 30px;
-  margin-left: 600px;
+  margin-left: 40%;
 
   text-align: center;
+  overflow-y: scroll;
 }
 
 .chairsWrapper {
   display: flex;
   justify-content: space-around;
-  width: 600px;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 10px;
 }
 
 .chairImage {
-  height: 35px;
-  width: 35px;
+  height: 55px;
+  width: 55px;
   transition: 0.6s linear;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .missedChair {
-  width: 55px;
+  width: 85px;
 }
 
 .chairsSpec {
