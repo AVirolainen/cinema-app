@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ваші квитки KINOLOVE</title>
+    <meta charset="UTF-8">
+
+<style type="text/css">
+    body{
+        margin: 0 auto;
+        background-color: #FDFFE0;
+    }
+    .wrapper{
+        margin: 0 auto;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        font-feature-settings: 'tnum', "tnum";
+        background-color: white;
+        width: 500px;
+        color: white;
+    }
+    .header{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        background-color: black;
+        text-align: center;
+        margin-bottom: 3px;
+        padding: 20px;
+    }
+    .header span {
+        font-size: 48px;
+    }
+    .main{
+        background-color: rgba(0, 0, 0, 0.93);
+        min-height: 300px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .grey_text {
+        color:rgba(255, 255, 255, 0.6)
+    }
+    .container {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .content_table {
+        width: 100%;
+        border:  0;
+        margin-bottom: 15px;
+    }
+
+    .footer{
+        font-size: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        text-align: center;
+        background-color: black;
+        margin-top: 3px;
+        padding: 20px;
+        height: 50px;
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <span class=>KINOLOVE</span>
+        </header>
+        <div class="main">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr style="margin-bottom: 15px;">
+                    <td valign="middle" class="container">
+                        Дякуємо за придбання квитків!
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" class="container">
+                        <table class="content_table" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <span class="grey_text">Фільм:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>«{{ tickets.0.screening.movie.title }}»</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" class="container">
+                        <table class="content_table" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <span class="grey_text">Дата та час:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>{{ tickets.0.screening.date_time|date:'Y.m.d H:i' }}</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" class="container">
+                        <table class="content_table" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <span class="grey_text">Місця</span>
+                                </td>
+                            </tr>
+                            {% for ticket in tickets %}
+                            <tr>
+                                <td>
+                                    <span>Ряд: {{ ticket.row }} Місце: {{ ticket.seat }}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" class="container">
+                        <table class="content_table" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <span class="grey_text">Ціна:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>{{ order.price }}</span><span> грн</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" class="container">
+                        <img style="width: 155px;" src="https://www.fastreport.ru/uploads/blogpost/QRPic1.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <footer class="footer">
+            <span>З питаннями:</span> <span>kinolovemail@gmail.com</span>
+
+        </footer>
+    </div>
+
+</body>
+</html>
