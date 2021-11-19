@@ -38,4 +38,4 @@ class Ticket(models.Model):
         unique_together = ('screening', 'row', 'seat')
 
     def __str__(self):
-        return f'{self.order}, row: {self.seat_row}, seat: {self.seat_column},'
+        return f'{self.order}, row: {self.row}, seat: {self.seat},'
