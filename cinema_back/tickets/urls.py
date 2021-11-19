@@ -1,9 +1,8 @@
 from rest_framework import routers
-from .views import ScreeningViewSet, MovieViewSet, OrderViewSet
+from .views import MovieViewSet, OrderViewSet
 
 
 router = routers.DefaultRouter()
-router.register('api/screenings', ScreeningViewSet)
 router.register('api/movies', MovieViewSet)
 router.register('api/orders', OrderViewSet)
 

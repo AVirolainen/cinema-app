@@ -27,5 +27,5 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(Ticket)
 class TicketAdmin(admin.ModelAdmin):
-	list_display = ('id', 'screening', 'order', 'seat_row', 'seat_column')
+	list_display = ('id', 'screening', 'order', 'row', 'seat')
 	search_fields = ('order',)

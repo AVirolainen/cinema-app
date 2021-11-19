@@ -39,11 +39,11 @@ def add_ticket(order, screening):
 	return ticket
 
 
-def add_orders(orders_n=3):
+def add_orders(orders_n=2):
 	screenings_obj_list = Screening.objects.all()
 
 	for i in range(orders_n):
-		tickets_n = random.randint(2, 5)
+		tickets_n = random.randint(2, 3)
 		fake_email = fakegen.email()
 		random_price = random.randint(100, 1000)
 		random_screening = random.choice(screenings_obj_list)

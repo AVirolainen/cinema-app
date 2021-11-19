@@ -1,6 +1,6 @@
-from .models import Screening, Movie, Order
+from .models import Movie, Order
 from rest_framework import viewsets, permissions
-from .serializers import ScreeningSerializer, MovieSerializer, OrderSerializer
+from .serializers import MovieSerializer, OrderSerializer
 
 
 class MovieViewSet(viewsets.ModelViewSet):
@@ -9,14 +9,6 @@ class MovieViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = MovieSerializer
-
-
-class ScreeningViewSet(viewsets.ModelViewSet):
-    queryset = Screening.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
-    serializer_class = ScreeningSerializer
 
 
 class OrderViewSet(viewsets.ModelViewSet):

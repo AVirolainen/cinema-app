@@ -24,18 +24,18 @@ class Order(models.Model):
     order_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.customer_mail} tickets'
+        return self.customer_mail
 
 
 class Ticket(models.Model):
     order = models.ForeignKey(Order, related_name='tickets', on_delete=models.CASCADE)
 
     screening = models.ForeignKey(Screening, related_name='tickets', on_delete=models.CASCADE)
-    seat_row = models.PositiveIntegerField()
-    seat_column = models.PositiveIntegerField()
+    row = models.PositiveIntegerField()
+    seat = models.PositiveIntegerField()
 
     class Meta:
-        unique_together = ('screening', 'seat_row', 'seat_column')
+        unique_together = ('screening', 'row', 'seat')
 
     def __str__(self):
-        return f'"order":{self.order}, "row":{self.seat_row}, "column":{self.seat_column},'
+        return f'{self.order}, row: {self.seat_row}, seat: {self.seat_column},'
