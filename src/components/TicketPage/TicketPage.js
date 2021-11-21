@@ -5,10 +5,11 @@ import 'antd/dist/antd.css';
 import { DatePicker, Space } from 'antd'
 import {Link} from "react-router-dom";
 import { useLocation } from "react-router"
-import { Button } from 'antd';
 import chair from "./assets/chair.svg"
 import chair_picked from "./assets/chair_picked.svg"
 import ChairHandler from "./ChairHandler";
+import CollectionCreateForm from "../ModalTicket/ModalTicket"
+import { Button } from 'antd';
 
 function range(start, end) {
     const result = [];
@@ -37,7 +38,12 @@ const TicketPage = ()=>{
     const [chairsList, setChairsList] = useState([])
     const [update, setUpdate] = useState(false)
 
-    console.log(chairsList)
+    const [visible, setVisible] = useState(false);
+
+    const onCreate = (values) => {
+        console.log('Received values of form: ', values);
+        setVisible(false);
+    };
 
     const changeList =(list)=>{
         setChairsList(list)
@@ -74,9 +80,9 @@ const TicketPage = ()=>{
                                 {
                                     row.map((item)=>{
             
-                                        if(item[1] === 2 || item[1] === 10 ){
-                                            return <div className="missedChair"> </div>
-                                        }
+                                        // if(item[1] === 2 || item[1] === 10 ){
+                                        //     return <div className="missedChair"> </div>
+                                        // }
                                         
                                         for(let k=0; k<chairsList.length; k++){
                                             if(JSON.stringify([item[1], item[0]]) === JSON.stringify(chairsList[k])){
@@ -149,16 +155,16 @@ const TicketPage = ()=>{
                         </div>
                     </div>
                     <div className="fullPrice">{chairsList.length*150}</div>
-                        <div className="ticketButton">
-                            <Link style={{color: 'white'}} to={{
-                                    pathname: '/buy',
-                                    state: {
-                                        filmName: filmName,
-                                        poster: poster
-                                    }}}>
-                                        Купити квиток
-                            </Link>
-                        </div>
+                    <div className="ticketButton" onClick={() => {setVisible(true)}}>
+                        Купити квиток
+                    </div>
+                    <CollectionCreateForm
+                        visible={visible}
+                        onCreate={onCreate}
+                        onCancel={() => {
+                          setVisible(false);
+                        }}
+                      />
                 </div>
 
                 </div>
@@ -167,5 +173,6 @@ const TicketPage = ()=>{
         </div>
     )
 }
+
 
 export default TicketPage

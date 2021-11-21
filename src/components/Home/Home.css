@@ -20,6 +20,12 @@
   justify-content: space-around;
 }
 
+.screeningsWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @media (max-width: 992px) {
   .filmposter {
     height: 700px;

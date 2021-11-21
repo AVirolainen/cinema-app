@@ -18,11 +18,12 @@ function getWindowDimensions() {
 const Home = ()=>{
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const {request} = useHttp()
+    const [filmsInfo, setFilmsInfo] = useState()
 
     const getPlaces = useCallback(async () => {
         try {
-          const fetched = await request('http://localhost:8000/api/screenings/', 'GET')
-          console.log(fetched);
+          const fetched = await request('https://kinolove.herokuapp.com/api/movies/', 'GET')
+          setFilmsInfo(fetched);
         } catch (e) {}
       }, [request])
 
@@ -58,7 +59,8 @@ const Home = ()=>{
                                         <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
                                             <div className="filmWrapperSchedule">
                                                 <div>
-                                                    <div className="ticketText">Виберіть дату та час сеансу</div>
+                                                    <div className="ticketText">Виберіть сеанс</div>
+
                                                 </div>
                                                 <div className="price">Ціна: 150грн</div>
                                             </div>
@@ -73,12 +75,16 @@ const Home = ()=>{
             </div>
         )
     }
+
+
+
+    if(filmsInfo){
     return (
         <div className="homePage">
             <Carousel>
                 <div className="carouselBlock carousel">
                     <div className="insideCarousel">
-                    {FilmData[0].map((item)=>{
+                    {FilmData[0].map((item, index)=>{
                         return (
                             <div className="filmbox">
                                 <Link to={{
@@ -93,7 +99,18 @@ const Home = ()=>{
                                 <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
                                     <div className="filmWrapperSchedule">
                                         <div>
-                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                            <div className="ticketText">Виберіть час сеансу</div>
+                                            <div className="screeningsWrapper">
+                                            {
+                                                filmsInfo[index].screenings.map((innerItem)=>{
+                                                    let hours = new Date(innerItem.date_time).getHours()
+                                                    let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    return(
+                                                        <div>{hours}:{minutes}</div>
+                                                    )
+                                                })
+                                            }
+                                            </div>
                                         </div>
                                         <div className="price">Ціна: 150грн</div>
                                     </div>
@@ -160,7 +177,8 @@ const Home = ()=>{
                     </div>
                 </div >
         </Carousel>
-      </div>)
+      </div>)}
+    return <></>
 }
 
 export default Home
