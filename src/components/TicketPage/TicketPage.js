@@ -14,7 +14,9 @@ import { Button, Modal } from 'antd';
 
 const TicketPage = ()=>{
     const location = useLocation()
-    const {filmName, poster, tickets} = location.state
+    const {filmName, poster, tickets, screeningId, forceUpdate} = location.state
+
+    console.log(forceUpdate)
 
     const [chairsList, setChairsList] = useState([])
     const [update, setUpdate] = useState(false)
@@ -169,6 +171,8 @@ const TicketPage = ()=>{
                         chairsList={chairsList}
                         visible={visible}
                         onCreate={onCreate}
+                        screeningId={screeningId}
+                        price={chairsList.length*150}
                         onCancel={() => {
                           setVisible(false);
                         }}

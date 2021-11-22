@@ -12,13 +12,16 @@ import {
   Modal,
   Radio
 } from 'antd';
+import {useHttp} from '../../hooks/http.hook'
 import "./ModalTicket.css"
+import { useHistory } from "react-router-dom";
+import rerenderTree from "../../index.js"
 
-const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList }) => {
+const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList, price, screeningId }) => {
+  let history = useHistory();
   const [form] = Form.useForm();
   const { Option } = Select;
-
-  console.log(chairsList)
+  const {request} = useHttp()
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -32,19 +35,43 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList }) => {
     </Form.Item>
   );
 
+  const pressHandler = async (values) => {
+    console.log(values)
+    let requestBody = {
+    'tickets': chairsList.map(item=>{
+      return {
+        "screening": screeningId,
+        "row": item[1],
+        "seat": item[0]
+      }
+    }),
+    "customer_mail": values.email,
+    "price": price+".00"
+    }
+
+    rerenderTree()
+    history.push("/inal")
+
+
+    try {
+        const data = await request('https://kinolove.herokuapp.com/api/orders/', 'POST', requestBody)
+        console.log(data);
+    }catch (e) {}
+  }
+
   return (
     <Modal
       visible={visible}
       title="Замовити квиток"
-      okText="Create"
-      cancelText="Cancel"
+      okText="Замовити"
+      cancelText="Закрити"
       onCancel={onCancel}
       onOk={() => {
         form
           .validateFields()
           .then((values) => {
             form.resetFields();
-            onCreate(values);
+            pressHandler(values);
           })
           .catch((info) => {
             console.log('Validate Failed:', info);

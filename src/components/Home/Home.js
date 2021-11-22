@@ -16,7 +16,14 @@ function getWindowDimensions() {
     };
   }
 
+function useForceUpdate(){
+    const [value, setValue] = useState(0); 
+    return () => setValue(value => value + 1);
+}
+
 const Home = ()=>{
+    const forceUpdate = useForceUpdate();
+
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const {request} = useHttp()
     const [filmsInfo, setFilmsInfo] = useState()
@@ -30,7 +37,7 @@ const Home = ()=>{
 
       useEffect(() => {
         getPlaces()
-      }, [getPlaces])
+      }, [getPlaces, windowDimensions])
 
 
     if(windowDimensions.width < 1000){
@@ -98,7 +105,6 @@ const Home = ()=>{
                                             <div className="screeningsWrapper">
                                             {
                                                 filmsInfo[index].screenings.map((innerItem)=>{
-                                                    console.log(filmsInfo[index].screenings)
                                                     let hours = new Date(innerItem.date_time).getHours()
                                                     let minutes = new Date(innerItem.date_time).getMinutes()
                                                     return(
@@ -108,7 +114,8 @@ const Home = ()=>{
                                                             state: {
                                                                 filmId: item.id,
                                                                 poster: item.logo,
-                                                                tickets: innerItem.tickets
+                                                                tickets: innerItem.tickets,
+                                                                screeningId: innerItem.id,
                                                             }}}>
                                                         <div className="hoursBlock">
                                                             {hours}:{minutes}
@@ -129,7 +136,7 @@ const Home = ()=>{
                 </div>
                 <div className="carouselBlock">
                 <div className="insideCarousel">
-                    {FilmData[1].map((item)=>{
+                    {FilmData[1].map((item, index)=>{
                         return (
                             <div className="filmbox">
                                 <Link to={{
@@ -144,7 +151,30 @@ const Home = ()=>{
                                     <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
                                     <div className="filmWrapperSchedule">
                                         <div>
-                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                            <div className="ticketText">Виберіть час сеансу</div>
+                                            <div className="screeningsWrapper">
+                                            {
+                                                filmsInfo[index+3].screenings.map((innerItem)=>{
+                                                    let hours = new Date(innerItem.date_time).getHours()
+                                                    let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    return(
+                                                    <Link 
+                                                        to={{
+                                                            pathname: '/film',
+                                                            state: {
+                                                                filmId: item.id,
+                                                                poster: item.logo,
+                                                                tickets: innerItem.tickets,
+                                                                screeningId: innerItem.id
+                                                            }}}>
+                                                        <div className="hoursBlock">
+                                                            {hours}:{minutes}
+                                                        </div>
+                                                    </Link>
+                                                    )
+                                                })
+                                            }
+                                            </div>
                                         </div>
                                         <div className="price">Ціна: 150грн</div>
                                     </div>
@@ -158,7 +188,7 @@ const Home = ()=>{
                 </div>
                 <div className="carouselBlock">
                 <div className="insideCarousel">
-                    {FilmData[2].map((item)=>{
+                    {FilmData[2].map((item, index)=>{
                         return (
                             <div className="filmbox">
                                 <Link to={{
@@ -173,7 +203,30 @@ const Home = ()=>{
                                 <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
                                     <div className="filmWrapperSchedule">
                                         <div>
-                                            <div className="ticketText">Виберіть дату та час сеансу</div>
+                                            <div className="ticketText">Виберіть час сеансу</div>
+                                            <div className="screeningsWrapper">
+                                            {
+                                                filmsInfo[index+6].screenings.map((innerItem)=>{
+                                                    let hours = new Date(innerItem.date_time).getHours()
+                                                    let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    return(
+                                                    <Link 
+                                                        to={{
+                                                            pathname: '/film',
+                                                            state: {
+                                                                filmId: item.id,
+                                                                poster: item.logo,
+                                                                tickets: innerItem.tickets,
+                                                                screeningId: innerItem.id
+                                                            }}}>
+                                                        <div className="hoursBlock">
+                                                            {hours}:{minutes}
+                                                        </div>
+                                                    </Link>
+                                                    )
+                                                })
+                                            }
+                                            </div>
                                         </div>
                                         <div className="price">Ціна: 150грн</div>
                                     </div>
