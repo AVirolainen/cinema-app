@@ -12,10 +12,13 @@ import {
   Modal,
   Radio
 } from 'antd';
+import "./ModalTicket.css"
 
-const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList }) => {
   const [form] = Form.useForm();
   const { Option } = Select;
+
+  console.log(chairsList)
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -24,8 +27,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           width: 70,
         }}
       >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
+        <Option value="+38">+38</Option>
       </Select>
     </Form.Item>
   );
@@ -91,13 +93,17 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           }}
         />
       </Form.Item>
-
-        <Form.Item name="modifier" className="collection-create-form_last-form-item">
-          <Radio.Group>
-            <Radio value="public">Public</Radio>
-            <Radio value="private">Private</Radio>
-          </Radio.Group>
-        </Form.Item>
+      <div className="modalTickets">
+      Квитки
+        {chairsList.map(item => {
+          return(
+            <div className="modalItem">
+              <div>Ряд: {item[1]}</div>
+              <div>Місце: {item[0]}</div>
+            </div>
+            )
+        })}
+      </div>
       </Form>
     </Modal>
   );

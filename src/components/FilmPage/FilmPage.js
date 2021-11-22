@@ -7,9 +7,11 @@ import {Link} from "react-router-dom"
 
 const FilmPage = ()=>{
     const location = useLocation()
-    const {filmId, poster} = location.state
+    const {filmId, poster, tickets} = location.state
     const [isLoaded, setIsLoaded] = useState(false)
     const [info, setInfo] = useState({})
+
+    console.log(filmId, poster, tickets)
 
     useEffect(() => {
         fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=c38fb01d`)
@@ -19,7 +21,6 @@ const FilmPage = ()=>{
             .then((data) => {
                 setIsLoaded(true)
                 setInfo(data)
-                console.log(data);
             });
     }, [])
 
@@ -39,7 +40,8 @@ const FilmPage = ()=>{
                         pathname: '/ticket',
                         state: {
                             filmName: info.Title,
-                            poster: poster
+                            poster: poster,
+                            tickets: tickets
                         }}}>
                             Вибрати квиток
             

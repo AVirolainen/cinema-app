@@ -1,7 +1,7 @@
 .loadingPage{
     position:relative;
     background-color: black;
-    height: 89vh;
+    height: 95vh;
 
     display: flex;
     justify-content: space-around;

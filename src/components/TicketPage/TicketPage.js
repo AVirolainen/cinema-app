@@ -6,55 +6,60 @@ import { DatePicker, Space } from 'antd'
 import {Link} from "react-router-dom";
 import { useLocation } from "react-router"
 import chair from "./assets/chair.svg"
+import chair_image from "./assets/chair.svg"
 import chair_picked from "./assets/chair_picked.svg"
 import ChairHandler from "./ChairHandler";
 import CollectionCreateForm from "../ModalTicket/ModalTicket"
-import { Button } from 'antd';
-
-function range(start, end) {
-    const result = [];
-    for (let i = start; i < end; i++) {
-        result.push(i);
-    }
-    return result;
-}
-
-function disabledDate(current) {
-    return current && current < moment().endOf('day');
-}
-  
-function disabledDateTime() {
-    return {
-        disabledHours: () => range(0, 23).splice(0, 10),
-        disabledMinutes: () => range(1, 60),
-        disabledSeconds: () => range(1, 60),
-    };
-}
+import { Button, Modal } from 'antd';
 
 const TicketPage = ()=>{
     const location = useLocation()
-    const {filmName, poster} = location.state
+    const {filmName, poster, tickets} = location.state
 
     const [chairsList, setChairsList] = useState([])
     const [update, setUpdate] = useState(false)
 
     const [visible, setVisible] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
 
     const onCreate = (values) => {
         console.log('Received values of form: ', values);
         setVisible(false);
     };
 
-    const changeList =(list)=>{
+    const changeList = (list) => {
         setChairsList(list)
         setUpdate(!update)
     }
 
+    const toBuyList = () => {
+        if(chairsList.length == 0){
+            //show modal with mistake 
+            setIsModalVisible(true);
+        }
+        else{
+            //show modal
+            setVisible(true)
+        }
+    }
+
     let places = []
 
-    for(let i=0; i<9; i++){
+    for(let i=1; i<10; i++){
         let row = []
-        for(let j=0; j<13; j++){
+        for(let j=1; j<14; j++){
             row.push([i, j, "free"])
         }
         places.push(row)
@@ -69,7 +74,9 @@ const TicketPage = ()=>{
                 </div>
             </div>
 
-            
+            <Modal title="Помилка" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <p>Виберіть хоча б один квиток</p>
+            </Modal>
 
             <div className="placesBox">
                 <div className="placesWrapper">
@@ -79,23 +86,25 @@ const TicketPage = ()=>{
                             <div className="chairsWrapper">
                                 {
                                     row.map((item)=>{
-            
-                                        // if(item[1] === 2 || item[1] === 10 ){
-                                        //     return <div className="missedChair"> </div>
-                                        // }
-                                        
+                                        for(let j=0; j<tickets.length; j++){
+                                            if(tickets[j].row == item[0] &&
+                                               tickets[j].seat == item[1]){
+                                                return <img src={chair_image} className="chairImage bought" />
+                                            }
+                                        }
+
                                         for(let k=0; k<chairsList.length; k++){
                                             if(JSON.stringify([item[1], item[0]]) === JSON.stringify(chairsList[k])){
                                                 item[2]="banned"
                                             }
                                         }
-                                        
                                         return <ChairHandler 
                                                             row={item[1]} 
                                                             column={item[0]}
                                                             chairsList={chairsList}
                                                             setChairsList={changeList}
-                                                            chairValue={item[2]}/>
+                                                            chairValue={item[2]}
+                                                            />
                                     })
                                 }
                             </div>
@@ -119,8 +128,6 @@ const TicketPage = ()=>{
                 </div>
 
                 <div className="bottomWrapper">
-
-
                 <div className="placesList">
                     <div className="placesHeader">
                         <div className="rowText">
@@ -137,10 +144,10 @@ const TicketPage = ()=>{
                         chairsList.map((item, index)=>{
                             return (<div className="placeItem" key={index}>
                                         <div className="rowValue">
-                                        {item[1]+1}
+                                        {item[1]}
                                         </div>
                                         <div className="placeValue">
-                                        {item[0]+1}
+                                        {item[0]}
                                         </div>
                                         <div className="priceValue">
                                             150
@@ -155,10 +162,11 @@ const TicketPage = ()=>{
                         </div>
                     </div>
                     <div className="fullPrice">{chairsList.length*150}</div>
-                    <div className="ticketButton" onClick={() => {setVisible(true)}}>
+                    <div className="ticketButton" onClick={toBuyList}>
                         Купити квиток
                     </div>
                     <CollectionCreateForm
+                        chairsList={chairsList}
                         visible={visible}
                         onCreate={onCreate}
                         onCancel={() => {
@@ -166,9 +174,7 @@ const TicketPage = ()=>{
                         }}
                       />
                 </div>
-
                 </div>
-                    
             </div>
         </div>
     )

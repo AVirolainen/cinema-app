@@ -97,3 +97,16 @@
   margin-top: 5px;
   font-size: 18px;
 }
+
+.hoursBlock{
+  margin-top: 5px;
+  font-size: 24px;
+  color: white;
+}
+
+
+.hoursBlock:hover{
+  text-decoration: underline;
+  color: white;
+}
+

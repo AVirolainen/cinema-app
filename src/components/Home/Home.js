@@ -6,6 +6,7 @@ import {FilmData} from "./FilmData"
 import {Link} from "react-router-dom"
 import { DatePicker, Space } from 'antd';
 import {useHttp} from "../../hooks/http.hook"
+import LoadingPage from "../LoadingPage/LoadingPage"
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -87,14 +88,8 @@ const Home = ()=>{
                     {FilmData[0].map((item, index)=>{
                         return (
                             <div className="filmbox">
-                                <Link to={{
-                                        pathname: '/film',
-                                        state: {
-                                            filmId: item.id,
-                                            poster: item.logo
-                                        }}}>
-                                    <img src={item.logo} className="filmposter"/>
-                                </Link>
+                                <img src={item.logo} className="filmposter"/>
+                                
                                 <div className="filmname">{item.name}</div>
                                 <div className="filmSchedule" style={{backgroundImage: "url(" + item.logo + ")"}}>
                                     <div className="filmWrapperSchedule">
@@ -103,10 +98,22 @@ const Home = ()=>{
                                             <div className="screeningsWrapper">
                                             {
                                                 filmsInfo[index].screenings.map((innerItem)=>{
+                                                    console.log(filmsInfo[index].screenings)
                                                     let hours = new Date(innerItem.date_time).getHours()
                                                     let minutes = new Date(innerItem.date_time).getMinutes()
                                                     return(
-                                                        <div>{hours}:{minutes}</div>
+                                                    <Link 
+                                                        to={{
+                                                            pathname: '/film',
+                                                            state: {
+                                                                filmId: item.id,
+                                                                poster: item.logo,
+                                                                tickets: innerItem.tickets
+                                                            }}}>
+                                                        <div className="hoursBlock">
+                                                            {hours}:{minutes}
+                                                        </div>
+                                                    </Link>
                                                     )
                                                 })
                                             }
@@ -178,7 +185,7 @@ const Home = ()=>{
                 </div >
         </Carousel>
       </div>)}
-    return <></>
+    return <LoadingPage></LoadingPage>
 }
 
 export default Home

@@ -67,6 +67,14 @@
   width: 120px;
 }
 
+.bought{
+  opacity: 0.2
+}
+
+.bought:hover {
+  opacity: 0.2;
+}
+
 .bannedChair {
   opacity: 0.5;
 }
