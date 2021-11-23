@@ -22,6 +22,7 @@ function useForceUpdate(){
 }
 
 const Home = ()=>{
+    document.title = "Kinolove - Сейчас в кино"
     const forceUpdate = useForceUpdate();
 
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());

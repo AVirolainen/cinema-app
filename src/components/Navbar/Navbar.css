@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+#navbarTitle{
+  margin-left: 15px
+}
+
 .nav-menu {
   z-index: 10000;
   background-color: #242424;

@@ -4,6 +4,7 @@ import {FilmData} from "./FilmData"
 import { Carousel } from 'antd';
 import {Link} from "react-router-dom"
 import 'antd/dist/antd.css';
+import MetaTags from 'react-meta-tags';
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -28,13 +29,21 @@ const Soon = ()=>{
 
     return (
         <div className="soonPage">
+            <MetaTags>
+                <title>Скоро в кинотеатре</title>
+                <meta id="meta-description" name="description" content="Скоро в кинотеатрах Kinolove" />
+                <meta name="keywords" content="скоро в кинотеатре Kinolove, скоро в кино, анонс" />
+                <meta id="og-title" property="og:title" content="О нас" />
+            </MetaTags>
+
+            <h1 style={{color: "white", paddingTop: "30px"}}>Скоро в кинотеатре Kinolove</h1>
             <Carousel autoplay>
                 <div className="carouselBlock carousel">
                     <div className="insideCarousel">
                     {FilmData[0].map((item)=>{
                         return (
                             <div className="filmbox">
-                                    <img src={item.logo} className="filmposter"/>
+                                <img src={item.logo} style={{width: "100%"}}/>
                                 <div className="filmname">{item.name}</div>
                             </div>
                         )

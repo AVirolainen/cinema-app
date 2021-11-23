@@ -14,14 +14,12 @@
 }
 
 .aboutImage {
-  width: 50%;
+  height: 100%;
 }
 
 .aboutText {
   text-align: center;
   background-color: black;
-  max-height: 560px;
-  overflow-y: scroll;
   width: 50%;
 }
 
@@ -35,7 +33,7 @@
 }
 
 .aboutInfo {
-  font-size: 18px;
+  font-size: 25px;
   width: 90%;
   text-align: start;
   margin: 0 auto;
