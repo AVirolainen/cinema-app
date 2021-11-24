@@ -103,23 +103,24 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList, price, 
           <Input />
         </Form.Item>
 
-      <Form.Item
-        name="phone"
-        label="Phone Number"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your phone number!',
-          },
-        ]}
-      >
-        <Input
-          addonBefore={prefixSelector}
-          style={{
-            width: '100%',
-          }}
-        />
-      </Form.Item>
+      {/* <Form.Item */}
+      {/*   name="phone" */}
+      {/*   label="Phone Number" */}
+      {/*   rules={[ */}
+      {/*     { */}
+      {/*       required: true, */}
+      {/*       message: 'Please input your phone number!', */}
+      {/*     }, */}
+      {/*   ]} */}
+      {/* > */}
+      {/*   <Input */}
+      {/*     addonBefore={prefixSelector} */}
+      {/*     style={{ */}
+      {/*       width: '100%', */}
+      {/*     }} */}
+      {/*   /> */}
+      {/* </Form.Item> */}
+      {/*  */}
       <div className="modalTickets">
       Квитки
         {chairsList.map(item => {

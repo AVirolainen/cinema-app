@@ -7,9 +7,9 @@ const AboutPage = () => {
         <div className="aboutPage">
 
             <MetaTags>
-                <title>О нас</title>
+                <title>О кинотеатре Kinolove</title>
                 <meta id="meta-description" name="description" content="Кинотеатр Kinolove - самая большая сеть кинотеатров в Украине" />
-                <meta name="keywords" content="кинотеатр в Киеве" />
+                <meta name="keywords" content="кинотеатр в Киеве, лучший кинотеатр Киев" />
                 <meta id="og-title" property="og:title" content="О нас" />
             </MetaTags>
 
@@ -17,9 +17,9 @@ const AboutPage = () => {
                 <img src={movies} className="moviesImage" />
             </div>
             <div className="aboutText">
-                <div className="aboutHeader">
+                <h1 className="aboutHeader" style={{color: "white"}}>
                     Kinolove
-                </div>
+                </h1>
 
                 <div className="aboutInfo">
                     <p>Kinolove – это самая большая сеть кинотеатров в Киеве основанная в 2004 году.</p>
