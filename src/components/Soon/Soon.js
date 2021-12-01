@@ -30,10 +30,10 @@ const Soon = ()=>{
     return (
         <div className="soonPage">
             <MetaTags>
-                <title>Скоро в кинотеатре</title>
+                <title>Скоро в кинотеатре Kinolove</title>
                 <meta id="meta-description" name="description" content="Скоро в кинотеатрах Kinolove" />
                 <meta name="keywords" content="скоро в кинотеатре Kinolove, скоро в кино, анонс" />
-                <meta id="og-title" property="og:title" content="О нас" />
+                <meta id="og-title" property="og:title" content="Скоро" />
             </MetaTags>
 
             <h1 style={{color: "white", paddingTop: "30px"}}>Скоро в кинотеатре Kinolove</h1>

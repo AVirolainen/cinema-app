@@ -108,6 +108,8 @@ const Home = ()=>{
                                                 filmsInfo[index].screenings.map((innerItem)=>{
                                                     let hours = new Date(innerItem.date_time).getHours()
                                                     let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    let day = new Date(innerItem.date_time).getDate()
+                                                    let month = new Date(innerItem.date_time).getMonth()
                                                     return(
                                                     <Link 
                                                         to={{
@@ -119,7 +121,13 @@ const Home = ()=>{
                                                                 screeningId: innerItem.id,
                                                             }}}>
                                                         <div className="hoursBlock">
-                                                            {hours}:{minutes}
+                                                        <div>
+                                                            Дата: {day}.{month}
+                                                        </div>
+                                                        <div>
+                                                            Время: {hours}:{minutes}
+                                                        </div>
+
                                                         </div>
                                                     </Link>
                                                     )
@@ -158,6 +166,8 @@ const Home = ()=>{
                                                 filmsInfo[index+3].screenings.map((innerItem)=>{
                                                     let hours = new Date(innerItem.date_time).getHours()
                                                     let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    let day = new Date(innerItem.date_time).getDate()
+                                                    let month = new Date(innerItem.date_time).getMonth()
                                                     return(
                                                     <Link 
                                                         to={{
@@ -169,7 +179,13 @@ const Home = ()=>{
                                                                 screeningId: innerItem.id
                                                             }}}>
                                                         <div className="hoursBlock">
-                                                            {hours}:{minutes}
+                                                        <div>
+                                                            Дата: {day}.{month}
+                                                        </div>
+                                                        <div>
+                                                            Время: {hours}:{minutes}
+                                                        </div>
+
                                                         </div>
                                                     </Link>
                                                     )
@@ -210,6 +226,8 @@ const Home = ()=>{
                                                 filmsInfo[index+6].screenings.map((innerItem)=>{
                                                     let hours = new Date(innerItem.date_time).getHours()
                                                     let minutes = new Date(innerItem.date_time).getMinutes()
+                                                    let day = new Date(innerItem.date_time).getDate()
+                                                    let month = new Date(innerItem.date_time).getMonth()
                                                     return(
                                                     <Link 
                                                         to={{
@@ -221,7 +239,13 @@ const Home = ()=>{
                                                                 screeningId: innerItem.id
                                                             }}}>
                                                         <div className="hoursBlock">
-                                                            {hours}:{minutes}
+                                                        <div>
+                                                            Дата: {day}.{month}
+                                                        </div>
+                                                        <div>
+                                                            Время: {hours}:{minutes}
+                                                        </div>
+
                                                         </div>
                                                     </Link>
                                                     )
