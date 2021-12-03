@@ -14,9 +14,9 @@ import { Button, Modal } from 'antd';
 
 const TicketPage = ()=>{
     const location = useLocation()
-    const {filmName, poster, tickets, screeningId, forceUpdate} = location.state
+    const {filmName, poster, tickets, screeningId, prices, forceUpdate} = location.state
 
-    console.log(forceUpdate)
+    console.log(prices)
 
     const [chairsList, setChairsList] = useState([])
     const [update, setUpdate] = useState(false)
@@ -100,7 +100,12 @@ const TicketPage = ()=>{
                                                 item[2]="banned"
                                             }
                                         }
+
+                                        const chairPrice = (1<=item[0] && item[0]<=3) ? prices.defaultPrice :
+                                                           (4<=item[0] && item[0]<=6) ? prices.mediumPrice : prices.expensivePrice
+
                                         return <ChairHandler 
+                                                            chairPrice={chairPrice}
                                                             row={item[1]} 
                                                             column={item[0]}
                                                             chairsList={chairsList}
@@ -152,7 +157,7 @@ const TicketPage = ()=>{
                                         {item[0]}
                                         </div>
                                         <div className="priceValue">
-                                            150
+                                        {item[2]}
                                         </div>
                                     </div>
                                 )
@@ -163,7 +168,11 @@ const TicketPage = ()=>{
                             Всього:
                         </div>
                     </div>
-                    <div className="fullPrice">{chairsList.length*150}</div>
+                    <div className="fullPrice">{
+                        
+                        chairsList.reduce(((previousValue, currentValue) => previousValue + currentValue[2]), 0)
+                        
+                    }</div>
                     <div className="ticketButton" onClick={toBuyList}>
                         Купити квиток
                     </div>

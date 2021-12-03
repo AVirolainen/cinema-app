@@ -5,7 +5,9 @@ import chair_picked from "./assets/chair_picked.svg"
 const ChairHandler = (props)=>{
     const row = props.row
     const column = props.column
+    const chairPrice = props.chairPrice
 
+    console.log(chairPrice)
     const [tempQ, setTempQ] = useState(props.chairValue)
 
     const showPlace = ()=>{
@@ -21,7 +23,7 @@ const ChairHandler = (props)=>{
                   }
             }
         }
-        let place = [row, column]
+        let place = [row, column, chairPrice]
         setTempQ("banned")
         props.setChairsList(props.chairsList.concat([place]))      
              

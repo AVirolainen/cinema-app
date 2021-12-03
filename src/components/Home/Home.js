@@ -32,6 +32,7 @@ const Home = ()=>{
     const getPlaces = useCallback(async () => {
         try {
           const fetched = await request('https://kinolove.herokuapp.com/api/movies/', 'GET')
+          console.log(fetched)
           setFilmsInfo(fetched);
         } catch (e) {}
       }, [request])
@@ -111,7 +112,7 @@ const Home = ()=>{
                                                     let day = new Date(innerItem.date_time).getDate()
                                                     let month = new Date(innerItem.date_time).getMonth()
                                                     return(
-                                                    <Link 
+                                                        <Link 
                                                         to={{
                                                             pathname: '/film',
                                                             state: {
@@ -119,6 +120,11 @@ const Home = ()=>{
                                                                 poster: item.logo,
                                                                 tickets: innerItem.tickets,
                                                                 screeningId: innerItem.id,
+                                                                prices: {
+                                                                    defaultPrice: innerItem.default_price,
+                                                                    mediumPrice: innerItem.medium_price,
+                                                                    expensivePrice: innerItem.expensive_price
+                                                                }
                                                             }}}>
                                                         <div className="hoursBlock">
                                                         <div>
@@ -126,6 +132,9 @@ const Home = ()=>{
                                                         </div>
                                                         <div>
                                                             Время: {hours}:{minutes}
+                                                        </div>
+                                                        <div>
+                                                            Цена: {innerItem.default_price}-{innerItem.expensive_price}
                                                         </div>
 
                                                         </div>
@@ -135,7 +144,6 @@ const Home = ()=>{
                                             }
                                             </div>
                                         </div>
-                                        <div className="price">Ціна: 150грн</div>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +193,9 @@ const Home = ()=>{
                                                         <div>
                                                             Время: {hours}:{minutes}
                                                         </div>
-
+                                                        <div>
+                                                            Цена: {innerItem.default_price}-{innerItem.expensive_price}
+                                                        </div>
                                                         </div>
                                                     </Link>
                                                     )
@@ -236,7 +246,12 @@ const Home = ()=>{
                                                                 filmId: item.id,
                                                                 poster: item.logo,
                                                                 tickets: innerItem.tickets,
-                                                                screeningId: innerItem.id
+                                                                screeningId: innerItem.id,
+                                                                prices: {
+                                                                    defaultPrice: innerItem.default_price,
+                                                                    mediumPrice: innerItem.medium_price,
+                                                                    expensivePrice: innerItem.expensive_price
+                                                                }
                                                             }}}>
                                                         <div className="hoursBlock">
                                                         <div>
@@ -245,7 +260,9 @@ const Home = ()=>{
                                                         <div>
                                                             Время: {hours}:{minutes}
                                                         </div>
-
+                                                        <div>
+                                                            Цена: {innerItem.default_price}-{innerItem.expensive_price}
+                                                        </div>
                                                         </div>
                                                     </Link>
                                                     )

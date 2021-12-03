@@ -7,10 +7,9 @@ import {Link} from "react-router-dom"
 
 const FilmPage = ()=>{
     const location = useLocation()
-    const {filmId, poster, tickets, screeningId, forceUpdate} = location.state
+    const {filmId, poster, tickets, screeningId, forceUpdate, prices} = location.state
     const [isLoaded, setIsLoaded] = useState(false)
     const [info, setInfo] = useState({})
-
 
     useEffect(() => {
         fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=c38fb01d`)
@@ -42,7 +41,8 @@ const FilmPage = ()=>{
                             poster: poster,
                             tickets: tickets,
                             screeningId: screeningId,
-                            forceUpdate: forceUpdate
+                            forceUpdate: forceUpdate,
+                            prices: prices
                         }}}>
                             Вибрати квиток
             
