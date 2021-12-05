@@ -7,9 +7,9 @@ const AboutPage = () => {
         <div className="aboutPage">
 
             <MetaTags>
-                <title>О кинотеатре Kinolove</title>
+                <title>Лучший кинотеатр Киева</title>
                 <meta id="meta-description" name="description" content="Кинотеатр Kinolove - самая большая сеть кинотеатров в Украине" />
-                <meta name="keywords" content="кинотеатр в Киеве, лучший кинотеатр Киев" />
+                <meta name="keywords" content="кинотеатр в Киеве, лучший кинотеатр Киевб лучший кинотеатр Kinolove" />
                 <meta id="og-title" property="og:title" content="О нас" />
             </MetaTags>
 
@@ -22,6 +22,7 @@ const AboutPage = () => {
                 </h1>
 
                 <div className="aboutInfo">
+                    <p>Kinolove - лучший кинотеатр в Киеве</p>
                     <p>Kinolove – это самая большая сеть кинотеатров в Киеве основанная в 2004 году.</p>
                     <p>Kinolove - это 28 кинотеатров и 141 кинозал в Киеве</p>
                     <p>Согласно лучшим мировым практикам корпоративного управления, в августе 2018 года был сформован высший орган управления 
