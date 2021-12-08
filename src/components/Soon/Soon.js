@@ -34,6 +34,8 @@ const Soon = ()=>{
                 <meta id="meta-description" name="description" content="Скоро в кинотеатрах Kinolove" />
                 <meta name="keywords" content="скоро в кинотеатре Kinolove, скоро в кино, анонс" />
                 <meta id="og-title" property="og:title" content="Скоро" />
+                <meta name="author" content="Stanislav Rudenko" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </MetaTags>
 
             <h1 style={{color: "white", paddingTop: "30px"}}>Скоро в кинотеатре Kinolove</h1>

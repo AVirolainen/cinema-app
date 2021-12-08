@@ -9,8 +9,10 @@ const AboutPage = () => {
             <MetaTags>
                 <title>О кинотеатре Kinolove</title>
                 <meta id="meta-description" name="description" content="Кинотеатр Kinolove - самая большая сеть кинотеатров в Украине" />
-                <meta name="keywords" content="кинотеатр в Киеве, лучший кинотеатр Киев" />
+                <meta name="keywords" content="кинотеатр в Киеве, лучший кинотеатр Киев, кинотеатр Kinolove" />
                 <meta id="og-title" property="og:title" content="О нас" />
+                <meta name="author" content="Stanislav Rudenko" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </MetaTags>
 
             <div className="aboutImage">

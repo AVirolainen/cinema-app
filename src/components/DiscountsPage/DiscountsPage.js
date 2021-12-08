@@ -11,6 +11,8 @@ const DiscountsPage = ()=>{
                 <meta id="meta-description" name="description" content="Акции в кинотеатре Kinolove" />
                 <meta name="keywords" content="недорогой кинотеатр в Киеве, недорогой кинотеатр, продажи билетов" />
                 <meta id="og-title" property="og:title" content="О нас" />
+                <meta name="author" content="Stanislav Rudenko" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </MetaTags>
 
             <div className="textDiv">
