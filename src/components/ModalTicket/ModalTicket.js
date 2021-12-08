@@ -49,7 +49,6 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel, chairsList, price, 
     "price": price+".00"
     }
 
-    rerenderTree()
     history.push("/inal")
 
 

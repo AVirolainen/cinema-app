@@ -7,8 +7,8 @@ const DiscountsPage = ()=>{
         <div className="discountsPage">
             
             <MetaTags>
-                <title>Акции в Kinolove</title>
-                <meta id="meta-description" name="description" content="Акции в кинотеатре Kinolove" />
+                <title>Дешевые билеты в кино</title>
+                <meta id="meta-description" name="description" content="Kinolove - недорогой кинотеатр в Киеве" />
                 <meta name="keywords" content="недорогой кинотеатр в Киеве, недорогой кинотеатр, продажи билетов" />
                 <meta id="og-title" property="og:title" content="О нас" />
                 <meta name="author" content="Stanislav Rudenko" />
